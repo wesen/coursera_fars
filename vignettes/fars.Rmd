@@ -1,0 +1,49 @@
+---
+title: "FARS Functionality"
+author: "Manuel Odendahl"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+devtools::load_all()
+```
+
+This package provides functionality to interact with the \href{Fatality Analysis Reporting System}{https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars} database.
+Given a set of `.csv.gz` datafiles, summaries about the number of accidents per year
+
+## Input data
+
+The FARS package needs data files for each year.
+The files need to be provided in the working directory and named `accident_YEAR.csv.bz2`.
+They can be read using the `fars_read_years` function, which returns a list of accidents counts by month and year.
+
+```{r}
+dir(getwd())
+fars_read_years(2013)
+```
+
+## Summarizing yearly reports
+
+You can get a report about years by using the function `fars_summarize_years`.
+
+```{r}
+fars_summarize_years(2013)
+```
+
+## Map plots
+
+Finally, you get a plot of all the accidents in a state using the `fars_map_state` function.
+
+```{r, echo=FALSE, results='asis'}
+fars_map_state(4, 2013)
+```
+
