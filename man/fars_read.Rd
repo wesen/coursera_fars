@@ -17,5 +17,7 @@ This function reads in a CSV file containing FARS accidents for a single year,
 and returns a dplyr tibble. The function `stop`s if the file does not exist.
 }
 \examples{
+\dontrun{
 fars_read(make_filename(2013))
+}
 }

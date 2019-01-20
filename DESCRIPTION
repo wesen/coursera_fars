@@ -4,7 +4,7 @@ Version: 0.0.0.9000
 Authors@R: person("John", "Smith", email = "john.smith@coursera.com", role = c("aut", "cre"))
 Description: Summarize and plot data from the FARS dataset.
 Depends: R (>= 3.5.2)
-License: Random license
+License: MIT
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1

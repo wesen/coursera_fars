@@ -26,6 +26,8 @@ and the data is then converted into a wide table for easier comparison using
 Invalid years will be ignored, and a warning message will be printed.
 }
 \examples{
+\dontrun{
 fars_summarize_years(2013:2015)
+}
 
 }

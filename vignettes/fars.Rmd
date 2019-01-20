@@ -38,6 +38,7 @@ You can get a report about years by using the function `fars_summarize_years`.
 
 ```{r}
 setwd(system.file("exdata", package = "fars"))
+print(dir(getwd()))
 fars_summarize_years(c(2013))
 ```
 

@@ -24,6 +24,8 @@ This function will fail on invalid states or years, and will create an empty plo
 if no accidents were found.
 }
 \examples{
+\dontrun{
 fars_map_state(1, 2015)
+}
 
 }
