@@ -14,7 +14,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-devtools::load_all()
+library(fars)
+setwd(system.file("exdata", package = "fars"))
 ```
 
 This package provides functionality to interact with the \href{Fatality Analysis Reporting System}{https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars} database.
@@ -27,7 +28,7 @@ The files need to be provided in the working directory and named `accident_YEAR.
 They can be read using the `fars_read_years` function, which returns a list of accidents counts by month and year.
 
 ```{r}
-dir(getwd())
+setwd(system.file("exdata", package = "fars"))
 fars_read_years(2013)
 ```
 
@@ -36,7 +37,8 @@ fars_read_years(2013)
 You can get a report about years by using the function `fars_summarize_years`.
 
 ```{r}
-fars_summarize_years(2013)
+setwd(system.file("exdata", package = "fars"))
+fars_summarize_years(c(2013))
 ```
 
 ## Map plots
@@ -44,6 +46,7 @@ fars_summarize_years(2013)
 Finally, you get a plot of all the accidents in a state using the `fars_map_state` function.
 
 ```{r, echo=FALSE, results='asis'}
+setwd(system.file("exdata", package = "fars"))
 fars_map_state(4, 2013)
 ```
 

@@ -11,7 +11,9 @@
 #' @importFrom dplyr tbl_df
 #'
 #' @examples
+#' \dontrun{
 #' fars_read(make_filename(2013))
+#' }
 fars_read <- function(filename) {
     if (!file.exists(filename))
         stop("file '", filename, "' does not exist")
@@ -51,7 +53,9 @@ make_filename <- function(year) {
 #' @importFrom magrittr %>%
 #'
 #' @examples
+#' \dontrun{
 #' fars_read_years(c(2013, 2014))
+#' }
 #'
 #' @export
 fars_read_years <- function(years) {
@@ -59,7 +63,7 @@ fars_read_years <- function(years) {
         file <- make_filename(year)
         tryCatch({
             dat <- fars_read(file)
-            dplyr::mutate(dat, year = YEAR) %>% dplyr::select(MONTH, year)
+            dplyr::mutate(dat, year = year) %>% dplyr::select(MONTH, year)
         }, error = function(e) {
             warning("invalid year: ", year)
             return(NULL)
@@ -90,7 +94,9 @@ fars_read_years <- function(years) {
 #' @importFrom magrittr %>%
 #'
 #' @examples
+#' \dontrun{
 #' fars_summarize_years(2013:2015)
+#' }
 #'
 #' @export
 fars_summarize_years <- function(years) {
@@ -117,7 +123,9 @@ fars_summarize_years <- function(years) {
 #' @importFrom graphics points
 #'
 #' @examples
+#' \dontrun{
 #' fars_map_state(1, 2015)
+#' }
 #'
 #' @export
 fars_map_state <- function(state.num, year) {
