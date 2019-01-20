@@ -17,10 +17,10 @@ There is a column per year, and a row for each month.
 This function returns a monthly comparison of the number of accidents in each year.
 }
 \details{
-The accident report CSV for each year is read using \link{fars_read_yars},
-a summary of the counts is created using \link{dplyr::summarize},
+The accident report CSV for each year is read using fars_read_years,
+a summary of the counts is created using dplyr::summarize,
 and the data is then converted into a wide table for easier comparison using
-\link{tidyr::spread}.
+tidyr::spread.
 }
 \note{
 Invalid years will be ignored, and a warning message will be printed.

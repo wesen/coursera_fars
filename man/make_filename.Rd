@@ -16,5 +16,7 @@ A string containing the filename of the CSV containing the requested year's info
 Returns the accident table's filename for a specific year
 }
 \examples{
+\dontrun{
 make_filename(2013)
+}
 }
